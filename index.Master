@@ -1,0 +1,154 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="index.master.cs" Inherits="TicariOtomasyon.index" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        #section1 {
+            height: 40px;
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #222;
+        }
+
+            .navbar a {
+                float: left;
+                font-size: 16px;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                .navbar a.active {
+                    background-color: #4CAF50;
+                    color: white;
+                }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+            .dropdown .dropbtn {
+                font-size: 16px;
+                border: none;
+                outline: none;
+                color: white;
+                padding: 14px 16px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+
+            .navbar a:hover, .dropdown:hover .dropbtn {
+                background-color: cornflowerblue;
+            }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #b6ff00;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            .dropdown-content a {
+                float: none;
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: #ddd;
+                }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .search-container {
+            float: right;
+        }
+
+        input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+        }
+
+        .search-container button {
+            float: right;
+            width: 100px;
+            height: 45px;
+            border-left: 1px solid #3EA3AD;
+        }
+
+            .search-container button:hover {
+                background: #fff;
+            }
+    </style>
+    <body style="height: 100%;">
+        <div class="main" id="section1">
+            <div class="navbar">
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        Dropdown 
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </div>
+                <a class="active" href="#home">Home</a>
+                <a href="#news">News</a>
+                <a href="#contact">Contact</a>
+                <a href="#about">About</a>
+
+                <div class="search-container">
+                    <form action="/action_page.php">
+                        <input type="text" placeholder="Search.." name="search">
+                        <button type="submit"><i class="fa fa-search"></i>BUL</button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+        <form id="form1" runat="server">
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+                    <content style="padding: 10px; padding-bottom: 120px;">
+
+                    </content>
+
+                </asp:ContentPlaceHolder>
+            </div>
+
+            <div>
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+
+                <footer style="height: 50px; bottom: 0; text-align: center; background-color: dimgrey; width: 100%">
+                    <p>by Selim TASDEMIR  &copy; <%: DateTime.Now.Year %> - ASP.NET APPLICATION</p>
+                </footer>
+            </div>
+
+        </form>
+    </body>
+</html>
+</head>
